@@ -25,9 +25,13 @@ function countDown(){
     const seconds = Math.floor(totalSeconds % 60);
 
     globalDays.innerHTML = days;
-    globalHours.innerHTML = hours;
-    globalMinutes.innerHTML = minutes;
-    globalSeconds.innerHTML = seconds;
+    globalHours.innerHTML = formatTime(hours);
+    globalMinutes.innerHTML = formatTime(minutes);
+    globalSeconds.innerHTML = formatTime(seconds);
+}
+
+function formatTime(time){
+    return time < 10 ? `0${time}` : time;
 }
 
 

@@ -3,6 +3,10 @@ const endIsNear = "1 Jan 2025";
 
 // Global variable  for Element in html5
 
+const globalDays  =  document.getElementById('days');
+const globalHours  = document.getElementById('hours');
+const globalMinutes = document.getElementById('minutes');
+const globalSeconds = document.getElementById('seconds');
 
 
 
@@ -20,7 +24,10 @@ function countDown(){
     const minutes = Math.floor(totalSeconds/ 60 % 60);
     const seconds = Math.floor(totalSeconds % 60);
 
-    console.log(days,hours,minutes, seconds);
+    globalDays.innerHTML = days;
+    globalHours.innerHTML = hours;
+    globalMinutes.innerHTML = minutes;
+    globalSeconds.innerHTML = seconds;
 }
 
 
@@ -28,3 +35,4 @@ function countDown(){
 
 // initial call 
 countDown();
+setInterval(countDown, 1000);
